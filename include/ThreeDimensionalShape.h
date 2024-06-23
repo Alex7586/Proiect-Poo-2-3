@@ -8,7 +8,7 @@
 #include <iostream>
 #include <cmath>
 
-class ThreeDimensionalShape : public Shape {
+class ThreeDimensionalShape : public Shape<double> {
 private:
 	std::vector<int> numberVerticesFaces;
 protected:
@@ -20,7 +20,8 @@ public:
 	friend std::ostream& operator<<(std::ostream& os, const ThreeDimensionalShape& threeDShape);
 	friend std::istream& operator>>(std::istream& is, ThreeDimensionalShape& threeDShape);
 
-	static double getDistance(std::tuple<double, double, double> A, std::tuple<double, double, double> B);
+	template<class T>
+	static T getDistance(std::tuple<double, double, double> A, std::tuple<double, double, double> B);
 
 	virtual void Afisare();
 
@@ -29,7 +30,8 @@ public:
 	virtual double volume();
 	virtual void display(sf::RenderWindow& window) const;
 private:
-	static double distance(std::tuple<double, double, double> A, std::tuple<double, double, double> B);
+	template<class T>
+	static T distance(std::tuple<double, double, double> A, std::tuple<double, double, double> B);
 };
 
 #endif

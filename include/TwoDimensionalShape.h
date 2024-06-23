@@ -8,7 +8,7 @@
 #include <iostream>
 #include <cmath>
 
-class TwoDimensionalShape : public Shape {
+class TwoDimensionalShape : public Shape<double> {
 protected:
 	std::vector<std::pair<double, double>> vertices;
 public:

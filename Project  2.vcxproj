@@ -138,6 +138,7 @@
     <ClCompile Include="src\Cone.cpp" />
     <ClCompile Include="src\Cuboid.cpp" />
     <ClCompile Include="src\Cylinder.cpp" />
+    <ClCompile Include="src\Meniu.cpp" />
     <ClCompile Include="src\Rectangle.cpp" />
     <ClCompile Include="src\Shape.cpp" />
     <ClCompile Include="src\Sphere.cpp" />
@@ -150,6 +151,8 @@
     <ClInclude Include="include\Cone.h" />
     <ClInclude Include="include\Cuboid.h" />
     <ClInclude Include="include\Cylinder.h" />
+    <ClInclude Include="include\Factory.h" />
+    <ClInclude Include="include\Meniu.h" />
     <ClInclude Include="include\Rectangle.h" />
     <ClInclude Include="include\Shape.h" />
     <ClInclude Include="include\Sphere.h" />

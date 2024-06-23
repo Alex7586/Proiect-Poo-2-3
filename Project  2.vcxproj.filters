@@ -60,6 +60,9 @@
     <ClCompile Include="src\Sphere.cpp">
       <Filter>Resource Files\3d</Filter>
     </ClCompile>
+    <ClCompile Include="src\Meniu.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Shape.h">
@@ -91,6 +94,12 @@
     </ClInclude>
     <ClInclude Include="include\ThreeDimensionalShape.h">
       <Filter>Header Files\3d</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Meniu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Factory.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

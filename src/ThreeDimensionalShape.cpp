@@ -53,9 +53,9 @@ double ThreeDimensionalShape::area() {
 			std::tuple<double, double, double> M = vertices[j];
 			std::tuple<double, double, double> N = vertices[j + 1];
 
-			double a = distance(N, O);
-			double b = distance(M, O);
-			double c = distance(M, N);
+			double a = distance<double>(N, O);
+			double b = distance<double>(M, O);
+			double c = distance<double>(M, N);
 			double p = (a + b + c) / 2;
 
 			A += sqrt(p) * sqrt(p - a) * sqrt(p - b) * sqrt(p - c);
@@ -70,7 +70,7 @@ double ThreeDimensionalShape::perimeter() {
 	int j = 0;
 	for (int i = 0; i < numberVerticesFaces.size(); i++) {
 		for (; j < numberVerticesFaces[i]; j++) {
-			P += distance(vertices[j], vertices[j + 1]);
+			P += distance<double>(vertices[j], vertices[j + 1]);
 		}
 		j++;
 	}
@@ -81,12 +81,14 @@ double ThreeDimensionalShape::volume() {
 	return 0;
 }
 
-double ThreeDimensionalShape::distance(std::tuple<double, double, double> A, std::tuple<double, double, double> B) {
+template<class T>
+T ThreeDimensionalShape::distance(std::tuple<double, double, double> A, std::tuple<double, double, double> B) {
 	return sqrt(pow(std::get<0>(A) - std::get<0>(B), 2) + pow(std::get<1>(A) - std::get<1>(B), 2) + pow(std::get<2>(A) - std::get<2>(B), 2));
 }
 
-double ThreeDimensionalShape::getDistance(std::tuple<double, double, double> A, std::tuple<double, double, double> B) {
-	return distance(A, B);
+template<class T>
+T ThreeDimensionalShape::getDistance(std::tuple<double, double, double> A, std::tuple<double, double, double> B) {
+	return distance<T>(A, B);
 }
 
 void ThreeDimensionalShape::Afisare() {
@@ -104,3 +106,8 @@ void ThreeDimensionalShape::Afisare() {
 }
 
 void ThreeDimensionalShape::display(sf::RenderWindow& window) const {}
+
+template double ThreeDimensionalShape::distance<double>(std::tuple<double, double, double> A, std::tuple<double, double, double> B);
+template int ThreeDimensionalShape::distance<int>(std::tuple<double, double, double> A, std::tuple<double, double, double> B);
+template double ThreeDimensionalShape::getDistance<double>(std::tuple<double, double, double> A, std::tuple<double, double, double> B);
+template int ThreeDimensionalShape::getDistance<int>(std::tuple<double, double, double> A, std::tuple<double, double, double> B);
